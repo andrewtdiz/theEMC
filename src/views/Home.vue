@@ -1,5 +1,5 @@
 <template>
-  <div style="font-family: Rajdhani" class="flex flex-col w-full relative  overflow-x-hidden">
+  <div style="font-family: Rajdhani; background: #1b1b1b;" class="flex flex-col w-full relative  overflow-x-hidden"> 
       <Navbar :scrollDist="scrollDist" />
 
 
@@ -63,6 +63,47 @@
         <div class="container flex pl-auto items-center">
           <div class="bg-gray-700 w-48 h-1 mr-4 ml-auto" style="height: 2px;"></div>
           <p class="text-gray-400 cursor-pointer hover:text-white text-2xl font-bold">VIEW ALL</p>
+        </div>
+      </div>
+
+      <div class="flex justify-center my-24 rounded-md" style="background: #1b1b1b; height: 60vh;">
+        <div class="container flex" style="background: #262626">
+          <div class="w-2/3 flex flex-col items-start p-4 text-white text-xl">
+            <p class="uppercase text-2xl font-bold mb-2">Episode 1: Cardiac Tamponade Lyrics</p>
+            
+            <p>[Intro]</p>
+            <p>EMC, chapter 1</p>
+            <p>See, diagnosing tamponade doesn't take an act of god</p>
+            <p  class="">Just a few easy steps makes you the man for the job</p>
+            <div class="py-3"></div>
+            <p @click="selected=(selected==1 ? 0 : 1)" class="bg-gray-800 hover:bg-gray-700 cursor-pointer transition duration-200">Step 1: Parasternal long, find the effusion</p>
+            <div @click="selected=(selected==2 ? 0 : 2)" class="flex flex-col hover:bg-gray-700 bg-gray-800">
+              <p class="cursor-pointer text-left transition duration-200">Step 2: The IVC, when they breath what's it doing?</p>
+              <p class="cursor-pointer text-left transition duration-200">If the fluid is backing up, won't be flattening or relaxing</p>
+              <p class="cursor-pointer text-left transition duration-200">The walls remain static</p>
+              <p class="cursor-pointer text-left transition duration-200">Even the fatness of the hepatic vein can be dramatic</p>
+            </div>
+            
+            <div class="py-3"></div>
+            <p class="">Step 3: The RV free wall you should be asking,</p>
+            <p class="">Is it actually collapsing when it should be expanding?</p>
+            <div class="py-6"></div>
+            <p class="cursor-pointer transition duration-200">To be continued?</p>
+
+
+
+
+          </div>
+          <div class="flex-1 p-2 px-4 flex items-stretch flex-col">
+            <p class="uppercase text-2xl font-bold mb-2 text-white">Notes from EMC</p>
+            <div v-if="selected==1" class="bg-white  py-3 rounded-md px-4 text-left text-black text-xl font-bold" >
+              <p>Comment #1: <br>  Something about the PSTL, could include an image here!</p>
+              <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1563999623406-JSX2NM93M0SCHB5QQE8B/ke17ZwdGBToddI8pDm48kNrEoSaZaGEx37ScrnN1QRtZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFp0eJd0Vvy0y2OYJX6hH-R4RVCGj_n7XTFnHE0A4DGIu87Nsj43NRAr6WuWZv5DKs/ezgifTamponade.gif" alt=""> 
+          </div>
+            <div v-if="selected==2" class="bg-white py-3 rounded-md px-4 text-left text-black text-xl font-bold" >
+              <p>Comment #2: <br>  Something about the IVC, could include an image here!</p>
+              <img src="https://thumbs.gfycat.com/UnsteadyFelineAmericanbittern-size_restricted.gif" alt=""> </div>
+          </div>
         </div>
       </div>
 
@@ -134,6 +175,7 @@ export default {
     return {
      scrollDist: 0,
      faders: undefined,
+     selected: 0,
     }
   },
   mounted() {
