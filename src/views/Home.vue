@@ -30,7 +30,7 @@
               </div>
             </div>
         </div>
-        <img class="object-cover w-full h-auto " :style="{transform: 'translateY('+scrollDist*0.6+'px)'}" style="filter: brightness(50%);" src="https://lh3.googleusercontent.com/U4f4iGtKgE0_ckE8ALbiRQ6Y8hzGo0CDe-Ke_5Vq9Ho7zbkuPvAYJKYgooM6Z2vjWwRYHoHX5g=w16383" alt="">
+        <img class="object-cover w-full h-auto " :style="{transform: 'translateY('+scrollDist*0.6+'px)'}" style="filter: brightness(50%);" src="../assets/NYC.png" alt="">
       </div>
 
       <div class="flex justify-center" style="background: #1b1b1b">
